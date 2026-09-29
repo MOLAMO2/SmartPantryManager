@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/title_settings" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_expiring_alerts"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary" />
+
+            <Switch
+                android:id="@+id/switch_expiry_alerts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/label_units_preference"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary" />
+
+        <RadioGroup
+            android:id="@+id/radio_units"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/radio_metric"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Metric (g, ml, kg, l)" />
+
+            <RadioButton
+                android:id="@+id/radio_imperial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Imperial (oz, lb, cup, tbsp)" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_bottom_nav" />
+
+</LinearLayout>

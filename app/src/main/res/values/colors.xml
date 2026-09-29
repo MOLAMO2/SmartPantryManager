@@ -1,0 +1,12 @@
+<resources>
+    <color name="primary">#2E7D32</color>
+    <color name="primary_dark">#1B5E20</color>
+    <color name="accent">#FF8F00</color>
+    <color name="background">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="error">#C62828</color>
+    <color name="success">#2E7D32</color>
+    <color name="white">#FFFFFF</color>
+</resources>
