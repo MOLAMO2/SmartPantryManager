@@ -116,7 +116,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
 
         try {
             double qty = Double.parseDouble(qtyText);
-            if (qty <= 0) {
+            if (qty <= 0 || qty > 10000) {
                 layoutQuantity.setError(getString(R.string.error_quantity_invalid));
                 valid = false;
             } else {
