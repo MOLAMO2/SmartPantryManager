@@ -49,7 +49,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
-
+    // The database has three tables:
+    // pantry_items - what the user owns right now (add / edit / delete)
+    // recipes - the fixed recipe catalogue, seeded on first run
+    // recipe_ingredients - what each recipe needs, linked to recipes by recipe_id
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_PANTRY + " (" +
