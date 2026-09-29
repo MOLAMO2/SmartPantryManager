@@ -7,6 +7,7 @@ import com.example.smartpantrymanager.model.RequiredIngredient;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import android.util.Log;
 
 /**
  * Implements the "strict-matching rule" described in the assignment brief
@@ -166,9 +167,9 @@ public class IngredientMatcher {
                 return false;
             }
         }
+        Log.d("IngredientMatcher", "Can make strictly: " + recipe.getName());
         return true;
     }
-
     /**
      * Counts how many required ingredients are missing from the pantry.
      * Used for the optional "Almost There" bonus list (Section 8): recipes
