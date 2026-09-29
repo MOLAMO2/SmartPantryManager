@@ -19,7 +19,7 @@
     <string name="error_name_required">Ingredient name is required</string>
     <string name="error_quantity_invalid">Enter a valid quantity greater than 0</string>
 
-    <string name="empty_pantry">Your pantry is empty. Tap + to add an ingredient.</string>
+    <string name="empty_pantry">No ingredients yet. Tap + to add your first one or list.</string>
     <string name="empty_suggestions">No recipes match your pantry yet — add more ingredients.</string>
     <string name="empty_almost">Nothing is close yet — add a few more ingredients.</string>
 
