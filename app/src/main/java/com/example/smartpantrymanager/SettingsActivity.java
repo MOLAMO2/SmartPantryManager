@@ -3,7 +3,7 @@ package com.example.smartpantrymanager;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 import android.widget.Switch;
-
+import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.smartpantrymanager.util.PreferencesManager;
@@ -34,9 +34,11 @@ public class SettingsActivity extends BaseActivity {
         radioUnits.check(preferencesManager.getUnitSystem().equals("imperial")
                 ? R.id.radio_imperial : R.id.radio_metric);
 
-        switchExpiryAlerts.setOnCheckedChangeListener((buttonView, isChecked) ->
-                preferencesManager.setExpiryAlertsEnabled(isChecked));
-
+        switchExpiryAlerts.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            preferencesManager.setExpiryAlertsEnabled(isChecked);
+            Toast.makeText(this, isChecked ? "Expiry alerts on" : "Expiry alerts off",
+                    Toast.LENGTH_SHORT).show();
+        });
         radioUnits.setOnCheckedChangeListener((group, checkedId) -> {
             String system = (checkedId == R.id.radio_imperial) ? "imperial" : "metric";
             preferencesManager.setUnitSystem(system);
