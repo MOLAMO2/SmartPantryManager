@@ -15,8 +15,6 @@ This app uses **SQLite via `SQLiteOpenHelper`** for local, on-device persistence
   query pattern.
 - Easy to seed a fixed recipe catalogue on first run via `onCreate()`.
 
-*(Update this section with your own reasoning if you choose Firebase or
-PostgreSQL instead — see Section 3.2 of the brief.)*
 
 ## Features
 
@@ -65,6 +63,4 @@ matcher falls back to comparing raw numbers.
 
 ## Database Choice Justification
 
-(Write 2–3 sentences here in your own words for the report / README, e.g. why
-SQLite fit this assignment's offline, single-user use case better than Firebase
-or PostgreSQL for you specifically.)
+I chose SQLite as the database for Smart Pantry Manager because the app's core purpose — tracking a user's pantry and matching it against recipes — needs to work reliably without depending on an internet connection. SQLite stores all data locally on the device via SQLiteOpenHelper, so the strict-matching logic can run instantly against the user's own pantry with no network latency, no server costs, and no risk of failing during a live demonstration if connectivity drops. The data itself is also naturally small and relational: pantry items, the recipe catalogue, and each recipe's required ingredients map cleanly onto a handful of SQL tables with simple queries, rather than needing the schema flexibility of a NoSQL store like Firebase. I did consider PostgreSQL, since a cloud database would allow a user's pantry to sync across multiple devices, but I rejected it for this assignment because it requires standing up and hosting a separate backend/REST API layer, which adds a live network dependency, more moving parts to secure and maintain, and a greater risk of something failing outside my control during grading — trade-offs that outweighed the benefit for a single-device, offline-first tool like this one.
