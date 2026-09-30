@@ -17,6 +17,7 @@ import com.example.smartpantrymanager.util.IngredientMatcher;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -98,7 +99,7 @@ public class SuggestedRecipesActivity extends BaseActivity {
                 missingCounts.put(recipe.getId(), 1);
             }
         }
-
+        Collections.sort(results, (a, b) -> a.getName().compareToIgnoreCase(b.getName()));
         if (results.isEmpty()) {
             recyclerView.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
